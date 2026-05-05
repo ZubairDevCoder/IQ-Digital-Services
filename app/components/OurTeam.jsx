@@ -32,7 +32,7 @@ export default function OurTeam() {
       {/* HEADER */}
       <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold">
-          Meet Our Creative Team
+          Meet Our <br className="md:hidden block" /> Creative Team
         </h2>
         <p className="text-gray-400 mt-4">
           IQ Digital Services — Designers, marketers & editors building modern

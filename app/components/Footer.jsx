@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600 blur-[180px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5">
         {/* Column 1 - Brand */}
         <div>
           <h2 className="text-xl font-medium mb-4 tracking-wide">

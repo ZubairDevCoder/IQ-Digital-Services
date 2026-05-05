@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Content */}
       <div className="max-w-4xl px-6">
         {/* Heading */}
-        <h1 className="text-2xl md:text-6xl font-extrabold leading-tight text-white">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-white">
           Welcome to <br />
           <span className="text-shadow-blue-700 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
             IQ Digital Services
