@@ -1,6 +1,6 @@
 import Link from "next/link";
 import WhatsAppFounder from "./WhatsAppfounder";
-
+import Image from "next/image";
 const links = [
   { name: "Home", href: "#" },
   { name: "About", href: "#about" },
@@ -23,12 +23,22 @@ export default function Footer() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-600 blur-[180px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5">
+      <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* Column 1 - Brand */}
         <div>
-          <h2 className="text-xl font-medium mb-4 tracking-wide">
-            IQ Digital Services
-          </h2>
+          <Link
+            href="/"
+            className="flex items-center hover:scale-105 transition duration-300"
+          >
+            <Image
+              src="/iq_logo.png"
+              alt="IQ Digital Services Logo"
+              width={140}
+              height={40}
+              priority
+              className="object-contain"
+            />
+          </Link> 
           <p className="text-gray-300 text-md leading-relaxed">
             We help brands grow through strategic marketing, creative design,
             and performance-driven digital solutions. Focused on results, built
@@ -76,9 +86,7 @@ export default function Footer() {
 
         {/* Column 4 - Contact */}
         <div>
-          <h3 className="text-lg font-medium mb-4 text-white">
-            Get in Touch
-          </h3>
+          <h3 className="text-lg font-medium mb-4 text-white">Get in Touch</h3>
 
           <ul className="space-y-3 text-gray-400 text-md font-medium">
             <li>

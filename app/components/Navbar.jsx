@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import {
@@ -30,10 +30,16 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-2xl font-extrabold tracking-wide flex items-center gap-1 hover:scale-105 transition"
+          className="flex items-center hover:scale-105 transition duration-300"
         >
-          <span className="text-pink-500">IQ</span>
-          <span className="text-white">Digital</span>
+          <Image
+            src="/iq_logo.png"
+            alt="IQ Digital Services Logo"
+            width={140}
+            height={40}
+            priority
+            className="object-contain"
+          />
         </Link>
 
         {/* Desktop Links */}

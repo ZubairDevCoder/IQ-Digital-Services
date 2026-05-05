@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import ClientReviews from "./components/ClientReviews";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <About />
         <Services />
         <Projects />
+        <ClientReviews />
         <Contact />
       </section>
     </>
