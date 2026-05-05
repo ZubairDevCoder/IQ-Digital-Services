@@ -17,12 +17,12 @@ export default function WhatsAppFounder() {
   return (
     <div className="">
       <Button
-      variant="default"
+        variant="default"
         onClick={handleClick}
-        className="flex items-center gap-2 px-5 py-4 "
+        className="flex items-center gap-2 px-5 py-4 md:w-auto w-full font-bold text-lg "
       >
         <FaWhatsapp size={20} />
-        <span className="hidden sm:inline">Contact me</span>
+        <span className="">Contact me</span>
       </Button>
     </div>
   );

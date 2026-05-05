@@ -76,12 +76,15 @@ export default function Services() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16 relative z-10"
       >
-        <h2 className="text-4xl md:text-5xl font-bold">
-          Premium SaaS Services
+        <h2 className="text-2xl md:text-4xl font-bold">
+          Premium Digital Services
         </h2>
         <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-          High-end digital solutions designed to grow, scale, and elevate your
-          business.
+          We deliver high-performance digital solutions including strategic
+          digital marketing, professional video editing, result-driven ads
+          management, and impactful social media marketing. Our focus is to
+          elevate your brand presence, generate real engagement, and turn your
+          vision into measurable growth.
         </p>
       </motion.div>
 

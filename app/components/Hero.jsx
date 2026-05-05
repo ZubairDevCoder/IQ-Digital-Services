@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Content */}
       <div className="max-w-4xl px-6">
         {/* Heading */}
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-white">
+        <h1 className="text-2xl md:text-6xl font-extrabold leading-tight text-white">
           Welcome to <br />
           <span className="text-shadow-blue-700 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
             IQ Digital Services
@@ -32,8 +32,8 @@ export default function Hero() {
         </h1>
 
         {/* Typing Skills */}
-        <p className="mt-4 text-xl md:text-2xl text-blue-400 font-medium">
-          We specialize in <TypingText words={skills} />
+        <p className="mt-4  text-2xl text-blue-400 font-medium">
+          We specialize in <br className='md:hidden block' /> <TypingText words={skills} />
         </p>
 
         {/* Short Description */}
@@ -46,7 +46,7 @@ export default function Hero() {
         {/* CTA */}
         <div className="mt-8 flex justify-center gap-4 flex-wrap">
           <Link href="#about">
-            <Button className="px-8 py-5 rounded-xl  font-medium ">
+            <Button className="px-8 py-5 rounded-xl  font-medium md:w-auto w-full mx-auto">
               Get Started
             </Button>
           </Link>
@@ -54,7 +54,7 @@ export default function Hero() {
           <Link href="#projects">
             <Button
               variant="outline"
-              className="px-8 py-5 rounded-xl text-black"
+              className="px-8 py-5 rounded-xl text-black font-medium md:w-auto w-full mx-auto"
             >
               View Portfolio
             </Button>

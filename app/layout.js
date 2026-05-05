@@ -31,6 +31,13 @@ export const metadata = {
     "Graphic Design",
     "Social Media Marketing",
   ],
+  verification: {
+    google: "googlee2480a318705e5c1", // 👈 yahan sirf code dalna
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -39,6 +46,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${poppins.variable} ${inter.variable} h-full scroll-smooth`}
     >
+      <meta
+        name="google-site-verification"
+        content="v8MZvG8XOHVTu6bd_307APE4IvEwf7MXBp1eO0945iI"
+      />
       <body className="min-h-full flex flex-col bg-black text-white font-[var(--font-inter)] relative overflow-x-hidden">
         {/* 🔥 Background Glow */}
         <MouseGlow />

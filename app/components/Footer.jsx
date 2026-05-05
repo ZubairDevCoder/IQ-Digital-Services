@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Column 1 - Brand */}
         <div>
-          <h2 className="text-2xl font-medium mb-4 tracking-wide">
+          <h2 className="text-xl font-medium mb-4 tracking-wide">
             IQ Digital Services
           </h2>
           <p className="text-gray-300 text-md leading-relaxed">
@@ -38,18 +38,18 @@ export default function Footer() {
 
         {/* Column 2 - Navigation */}
         <div>
-          <h3 className="text-lg font-medium mb-4 text-white">Navigation</h3>
+          <h3 className="text-xl font-medium mb-4 text-white">Navigation</h3>
 
           <ul className="space-y-3 text-sm">
             {links.map((link, i) => (
               <li key={i}>
                 <Link
                   href={link.href}
-                  className="relative inline-block text-gray-400 hover:text-white transition duration-300
+                  className="relative inline-block text-gray-50 hover:text-white transition duration-300
                   after:content-[''] after:absolute after:left-0 after:-bottom-1
                   after:h-[2px] after:w-0 after:bg-purple-500
                   after:transition-all after:duration-300
-                  hover:after:w-full"
+                  hover:after:w-full font-bold text-md"
                 >
                   {link.name}
                 </Link>
@@ -60,13 +60,13 @@ export default function Footer() {
 
         {/* Column 3 - Services */}
         <div>
-          <h3 className="text-lg font-medium mb-4 text-white">Services</h3>
+          <h3 className="text-xl font-medium mb-4 text-white">Services</h3>
 
           <ul className="space-y-3 text-md">
             {services.map((service, i) => (
               <li
                 key={i}
-                className="text-gray-400 hover:text-purple-400 transition duration-300 cursor-pointer"
+                className="text-gray-50 hover:text-purple-400 transition duration-300 cursor-pointer text-md font-medium "
               >
                 {service}
               </li>

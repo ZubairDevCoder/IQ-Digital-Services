@@ -23,7 +23,7 @@ const team = [
 
 export default function OurTeam() {
   return (
-    <section className="py-28 px-6 bg-[#0b0b10] text-white relative overflow-hidden rounded-xl">
+    <section className="py-12 md:w-auto w-full  bg-[#0b0b10] text-white relative overflow-hidden rounded-xl">
       {/* Glow */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600 blur-[180px]" />
@@ -93,7 +93,7 @@ export default function OurTeam() {
             </p>
 
             {/* BUTTON */}
-            <div className="mt-6 flex items-center justify-center">
+            <div className="mt-6 flex items-center justify-center w-full">
               <WhatsAppFounder />
             </div>
           </div>

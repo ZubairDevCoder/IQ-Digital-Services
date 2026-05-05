@@ -48,7 +48,7 @@ export default function Portfolio() {
       {/* TOP CONTENT */}
       <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold">
-          Client Results Portfolio
+          Client Results Projects
         </h2>
 
         <p className="text-gray-400 mt-4 text-lg">
@@ -60,36 +60,38 @@ export default function Portfolio() {
       </div>
 
       {/* GRID */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto relative z-10">
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-4 max-w-6xl mx-auto space-y-4 relative z-10">
         {visibleProjects.map((img, index) => (
           <Dialog key={index}>
             <DialogTrigger asChild>
-              <div className="group cursor-pointer relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                {/* Image */}
-                <Image
-                  src={img}
-                  alt="project"
-                  width={500}
-                  height={500}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                />
+              <div className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm mb-4">
+                {/* IMAGE */}
+                <div className="overflow-hidden rounded-xl">
+                  <Image
+                    src={img}
+                    alt="project"
+                    width={800}
+                    height={1000}
+                    className="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-                {/* Overlay */}
+                {/* OVERLAY */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                  <span className="text-sm font-semibold tracking-wide">
+                  <span className="text-sm font-semibold tracking-wide text-white">
                     View Project
                   </span>
                 </div>
               </div>
             </DialogTrigger>
 
-            {/* FULL IMAGE MODAL */}
+            {/* MODAL */}
             <DialogContent className="max-w-5xl bg-black/90 border-none">
               <Image
                 src={img}
                 alt="project preview"
                 width={1200}
-                height={800}
+                height={1600}
                 className="w-full h-auto rounded-xl"
               />
             </DialogContent>

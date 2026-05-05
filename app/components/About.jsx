@@ -139,10 +139,10 @@ export default function About() {
       {/* background glow */}
       <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/10 blur-3xl rounded-full"></div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-2 md:px-4">
         {/* HEADER */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-2xl md:text-6xl font-bold text-gray-900 dark:text-white">
             About <br className="md:hidden block" />{" "}
             <span className="text-purple-500">IQ Digital Services</span>
           </h2>
@@ -236,10 +236,10 @@ export default function About() {
         {/* background glow */}
         <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/10 blur-3xl rounded-full"></div>
 
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-1 md:px-3">
           {/* HEADER */}
           <div className="text-center mb-7 py-8">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white">
               Meet Our <span className="text-purple-500">Team</span>
             </h2>
 
