@@ -88,8 +88,8 @@ export default function Portfolio() {
                         src={img}
                         alt="project"
                         width={800}
-                        height={1000}
-                        className="w-full h-72 object-cover transition duration-500 group-hover:scale-110"
+                        height={800}
+                        className="w-100 md:h-72 h-80 object-cover transition duration-500 group-hover:scale-110"
                       />
 
                       {/* overlay */}
