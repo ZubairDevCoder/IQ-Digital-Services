@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import Autoplay from "embla-carousel-autoplay";
+
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const projects = [
   "/p1.jpg",
@@ -28,88 +28,93 @@ const projects = [
   "/p13.jpg",
   "/p14.jpg",
   "/p15.jpg",
+  "/p16.jpg",
+  "/p17.jpg",
+  "/p18.jpg",
+  "/p19.jpg",
+  "/p20.jpg",
 ];
 
 export default function Portfolio() {
-  const [showAll, setShowAll] = useState(false);
-
-  const visibleProjects = showAll ? projects : projects.slice(0, 10);
+  const plugin = useRef(
+    Autoplay({
+      delay: 2000,
+      stopOnInteraction: false,
+    }),
+  );
 
   return (
     <section
       id="projects"
       className="py-28 px-6 bg-[#0b0b10] text-white relative overflow-hidden"
     >
-      {/* Glow background */}
+      {/* glow bg */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-pink-600 blur-[180px]" />
       </div>
 
-      {/* TOP CONTENT */}
+      {/* heading */}
       <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold">
           Client Results Projects
         </h2>
-
         <p className="text-gray-400 mt-4 text-lg">
-          These are real client projects we worked on — including
-          <span className="text-pink-400 font-semibold"> ads campaigns</span>,
-          social media marketing, and performance-driven strategies that
-          delivered real business results.
+          Real client work including ads campaigns, social media marketing, and
+          performance strategies.
         </p>
       </div>
 
-      {/* GRID */}
-      <div className="columns-2 md:columns-3 lg:columns-4 gap-4 max-w-6xl mx-auto space-y-4 relative z-10">
-        {visibleProjects.map((img, index) => (
-          <Dialog key={index}>
-            <DialogTrigger asChild>
-              <div className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm mb-4">
-                {/* IMAGE */}
-                <div className="overflow-hidden rounded-xl">
-                  <Image
-                    src={img}
-                    alt="project"
-                    width={800}
-                    height={1000}
-                    className="w-full h-auto object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
+      {/* carousel */}
+      <div className="max-w-6xl mx-auto relative z-10">
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: false,
+            }),
+          ]}
+          opts={{ loop: true }}
+        >
+          <CarouselContent>
+            {projects.map((img, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="group cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                      <Image
+                        src={img}
+                        alt="project"
+                        width={800}
+                        height={1000}
+                        className="w-full h-72 object-cover transition duration-500 group-hover:scale-110"
+                      />
 
-                {/* OVERLAY */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                  <span className="text-sm font-semibold tracking-wide text-white">
-                    View Project
-                  </span>
-                </div>
-              </div>
-            </DialogTrigger>
+                      {/* overlay */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span className="text-sm font-semibold">View</span>
+                      </div>
+                    </div>
+                  </DialogTrigger>
 
-            {/* MODAL */}
-            <DialogContent className="max-w-5xl bg-black/90 border-none">
-              <Image
-                src={img}
-                alt="project preview"
-                width={1200}
-                height={1600}
-                className="w-full h-auto rounded-xl"
-              />
-            </DialogContent>
-          </Dialog>
-        ))}
+                  {/* modal */}
+                  <DialogContent className="max-w-4xl bg-black/90 border-none">
+                    <Image
+                      src={img}
+                      alt="preview"
+                      width={1200}
+                      height={1600}
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </DialogContent>
+                </Dialog>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
-
-      {/* BUTTON */}
-      {!showAll && (
-        <div className="text-center mt-12 relative z-10">
-          <Button
-            onClick={() => setShowAll(true)}
-            className="px-6 py-3 text-white bg-pink-500 hover:bg-pink-600 transition font-semibold"
-          >
-            View More Projects
-          </Button>
-        </div>
-      )}
     </section>
   );
 }

@@ -53,7 +53,7 @@ export default function OurTeam() {
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-indigo-500/20 via-cyan-500/10 to-purple-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition" />
 
           {/* CARD */}
-          <div className="relative group p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden text-center hover:-translate-y-2 transition duration-300">
+          <div className="relative group pb-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden text-center hover:-translate-y-2 transition duration-300">
             {/* Vertical text */}
             <div className="absolute left-3 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] tracking-[0.4em] text-white/10">
               CO-FOUNDER
@@ -63,15 +63,14 @@ export default function OurTeam() {
             </div>
 
             {/* IMAGE */}
-            <div className="relative w-36 aspect-square mx-auto mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-lg shadow-black/20">
+            <div className="relative w-full aspect-[4/4] mx-auto mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-lg shadow-black/20">
               <Image
-                src="/Cofounder.jpg"
+                src="/cofounder.jpg"
                 alt="Muhammad Ismaeel"
                 fill
                 className="object-cover group-hover:scale-110 transition duration-500"
               />
 
-              {/* overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
 
@@ -81,7 +80,7 @@ export default function OurTeam() {
             </h3>
 
             {/* ROLE */}
-            <p className="text-purple-400 text-sm font-medium mt-2">
+            <p className="text-purple-600 text-md font-bold mt-2">
               Co-Founder • Digital Marketing Specialist
             </p>
 

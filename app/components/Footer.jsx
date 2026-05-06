@@ -30,16 +30,19 @@ export default function Footer() {
             href="/"
             className="flex items-center hover:scale-105 transition duration-300"
           >
-            <Image
-              src="/iq_logo.png"
-              alt="IQ Digital Services Logo"
-              width={140}
-              height={40}
-              priority
-              className="object-contain"
-            />
-          </Link> 
-          <p className="text-gray-300 text-md leading-relaxed">
+            <h1 className="text-xl  font-bold text-center">
+              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                IQ
+              </span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Digital
+              </span>{" "}
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                Services
+              </span>
+            </h1>
+          </Link>
+          <p className="text-gray-300 text-md leading-relaxed mt-3">
             We help brands grow through strategic marketing, creative design,
             and performance-driven digital solutions. Focused on results, built
             for long-term success.

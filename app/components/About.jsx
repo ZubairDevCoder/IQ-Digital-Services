@@ -90,31 +90,19 @@ const skills = [
 const results = [
   {
     id: 1,
-    img: "/result1.jpg",
+    img: "/results2.jpg",
     title: "Ad Campaign Growth",
     desc: "High ROI through targeted ads strategy.",
   },
   {
     id: 2,
-    img: "/result2.jpg",
-    title: "Social Media Reach",
-    desc: "Massive audience and engagement boost.",
-  },
-  {
-    id: 3,
-    img: "/result3.jpg",
-    title: "Lead Generation",
-    desc: "Generated quality leads with funnels.",
-  },
-  {
-    id: 4,
-    img: "/result4.png",
+    img: "/results3.jpg",
     title: "Brand Awareness",
     desc: "Strong brand visibility across platforms.",
   },
   {
-    id: 5,
-    img: "/result5.png",
+    id: 3,
+    img: "/results1.jpg",
     title: "Sales Growth",
     desc: "Increased conversions and revenue.",
   },

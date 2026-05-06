@@ -32,14 +32,17 @@ export default function Navbar() {
           href="/"
           className="flex items-center hover:scale-105 transition duration-300"
         >
-          <Image
-            src="/iq_logo.png"
-            alt="IQ Digital Services Logo"
-            width={140}
-            height={40}
-            priority
-            className="object-contain"
-          />
+          <h1 className="text-xl md:text-xl font-bold text-center">
+            <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              IQ
+            </span>{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Digital
+            </span>{" "}
+            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              Services
+            </span>
+          </h1>
         </Link>
 
         {/* Desktop Links */}
@@ -91,7 +94,7 @@ export default function Navbar() {
               </SheetHeader>
 
               {/* Mobile Links */}
-              <div className="flex flex-col gap-6 mt-6 px-6">
+              <div className="flex flex-col gap-6 mt-6 px-6 items-start">
                 {links.map((link, i) => (
                   <SheetClose asChild key={link.name}>
                     <Link
