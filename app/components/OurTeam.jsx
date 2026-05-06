@@ -65,7 +65,7 @@ export default function OurTeam() {
             {/* IMAGE */}
             <div className="relative w-full aspect-[4/4] mx-auto mb-6 rounded-2xl overflow-hidden border border-white/20 shadow-lg shadow-black/20">
               <Image
-                src="/cofounder.jpg"
+                src="/Cofounder.jpg"
                 alt="Muhammad Ismaeel"
                 fill
                 className="object-cover group-hover:scale-110 transition duration-500"

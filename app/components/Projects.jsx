@@ -83,13 +83,13 @@ export default function Portfolio() {
               >
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="group cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                    <div className="group cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm relative">
                       <Image
                         src={img}
                         alt="project"
                         width={800}
                         height={800}
-                        className="w-100 md:h-72 h-80 object-cover transition duration-500 group-hover:scale-110"
+                        className="w-full h-80 object-cover transition duration-500 group-hover:scale-110"
                       />
 
                       {/* overlay */}
