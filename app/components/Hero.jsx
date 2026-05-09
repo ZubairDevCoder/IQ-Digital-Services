@@ -8,14 +8,14 @@ export default function Hero() {
   const skills = ["Digital Marketing", "Video Editing", "Graphic Designing"]; 
 
   return (
-    <section className="relative h-auto flex items-center justify-center text-center overflow-hidden py-40 ">
+    <section className="relative  h-auto flex items-center justify-center text-center overflow-hidden py-40 ">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="/herobg.gif"
           alt="bg"
           fill
-          className="object-cover opacity-70"
+          className="object-cover opacity-70 "
         />
       </div>
 

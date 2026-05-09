@@ -1,125 +1,104 @@
 "use client";
 
-import { useLayoutEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 export default function Services() {
   const services = [
     {
       title: "Digital Marketing",
       desc: "Performance-driven marketing strategies to scale your brand and generate qualified leads.",
-      gradient: "from-purple-500/20 to-pink-500/20",
     },
     {
       title: "Video Editing",
       desc: "Cinematic storytelling with motion graphics that capture attention and build engagement.",
-      gradient: "from-pink-500/20 to-red-500/20",
     },
     {
       title: "Graphic Designing",
       desc: "Modern visual identity design for brands that want to stand out in a crowded market.",
-      gradient: "from-blue-500/20 to-cyan-500/20",
     },
     {
       title: "Ads Management",
-      desc: "Expert management of Meta and TikTok ad campaigns focused on ROI, targeting, and scalable growth.",
-      gradient: "from-green-500/20 to-emerald-500/20",
+      desc: "Expert management of Meta and TikTok ad campaigns focused on ROI and scalable growth.",
     },
     {
       title: "Social Media Marketing",
-      desc: "Strategic content planning, posting, and growth techniques to build a strong and engaging online presence.",
-      gradient: "from-indigo-500/20 to-purple-500/20",
+      desc: "Strategic content planning and growth techniques for strong online presence.",
     },
   ];
-
-  // GSAP scroll animation (safe version)
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".saas-card", {
-        scrollTrigger: {
-          trigger: "#services",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.15,
-      });
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section
       id="services"
-      className="relative py-28 px-6 bg-[#0b0b10] text-white overflow-hidden"
+      className="relative py-24 px-6 bg-[#0b0b10] text-white overflow-hidden"
     >
-      {/* Glow Background */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600 blur-[180px]" />
-      </div>
-
-      {/* Heading (Framer Motion) */}
+      {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16 relative z-10"
+        className="text-center mb-16"
       >
-        <h2 className="text-2xl md:text-4xl font-bold">
+        <h2 className="text-3xl md:text-5xl font-bold">
           Premium Digital Services
         </h2>
-        <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-          We deliver high-performance digital solutions including strategic
-          digital marketing, professional video editing, result-driven ads
-          management, and impactful social media marketing. Our focus is to
-          elevate your brand presence, generate real engagement, and turn your
-          vision into measurable growth.
+
+        <p className="text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+          We provide modern digital solutions that help brands grow faster,
+          attract customers, and build a strong online presence.
         </p>
       </motion.div>
 
-      {/* Cards Grid */}
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
-        {services.map((service, i) => (
-          <motion.div
-            key={i}
-            className={`saas-card relative p-8 rounded-2xl border border-white/10 
-            bg-white/5 backdrop-blur-xl hover:-translate-y-2 transition-all duration-300`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-          >
-            {/* Gradient Layer */}
-            <div
-              className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.gradient} opacity-30`}
-            />
+      {/* Infinite Carousel */}
+      <div className="max-w-7xl mx-auto">
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: false,
+            }),
+          ]}
+          opts={{
+            loop: true,
+            align: "start",
+          }}
+        >
+          <CarouselContent>
+            {services.map((service, i) => (
+              <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="h-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-8 
+                  hover:border-cyan-400/40 hover:bg-white/10 transition-all duration-300"
+                >
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+                    <div className="w-3 h-3 rounded-full bg-cyan-400" />
+                  </div>
 
-            {/* Content */}
-            <div className="relative z-10">
-              <div className="w-12 h-12 mb-5 rounded-xl bg-white/10 flex items-center justify-center">
-                <div className="w-2 h-2 bg-white rounded-full" />
-              </div>
+                  {/* Content */}
+                  <h3 className="text-2xl font-semibold mb-4">
+                    {service.title}
+                  </h3>
 
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {service.desc}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+                  <p className="text-gray-400 leading-relaxed text-sm">
+                    {service.desc}
+                  </p>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );

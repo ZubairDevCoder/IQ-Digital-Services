@@ -34,7 +34,7 @@ const projects = [
   "/p19.jpg",
   "/p20.jpg",
 ];
-
+const videos = ["/v1.mp4", "/v2.mp4"];
 export default function Portfolio() {
   const plugin = useRef(
     Autoplay({
@@ -79,7 +79,7 @@ export default function Portfolio() {
             {projects.map((img, index) => (
               <CarouselItem
                 key={index}
-                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+                className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
               >
                 <Dialog>
                   <DialogTrigger asChild>
@@ -89,7 +89,7 @@ export default function Portfolio() {
                         alt="project"
                         width={800}
                         height={800}
-                        className="w-full h-80 object-cover transition duration-500 group-hover:scale-110"
+                        className="w-auto h-100   object-cover transition duration-500 group-hover:scale-110"
                       />
 
                       {/* overlay */}
@@ -110,6 +110,44 @@ export default function Portfolio() {
                     />
                   </DialogContent>
                 </Dialog>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
+      {/* VIDEO SECTION */}
+      <div>
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 2500,
+              stopOnInteraction: false,
+            }),
+          ]}
+          opts={{ loop: true }}
+        >
+          <CarouselContent>
+            {videos.map((vid, i) => (
+              <CarouselItem
+                key={i}
+                className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 mt-6"
+              >
+                <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 cursor-pointer">
+                  <video
+                    src={videos[i]}
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                    className="w-full h-72 md:h-80 object-cover transition duration-500 group-hover:scale-110"
+                  />
+
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span className="text-sm font-semibold animate-pulse">
+                      Watch Video
+                    </span>
+                  </div>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>

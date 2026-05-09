@@ -16,17 +16,24 @@ export default function TypingText({ words }) {
         const timeout = setTimeout(() => {
           setSubIndex((p) => p + 1);
           setText(words[index].substring(0, subIndex + 1));
-        }, 80);
+        }, 140); // typing speed slow
+
         return () => clearTimeout(timeout);
       } else {
-        setForward(false);
+        // word complete hone ke baad wait
+        const timeout = setTimeout(() => {
+          setForward(false);
+        }, 1000);
+
+        return () => clearTimeout(timeout);
       }
     } else {
       if (subIndex > 0) {
         const timeout = setTimeout(() => {
           setSubIndex((p) => p - 1);
           setText(words[index].substring(0, subIndex - 1));
-        }, 40);
+        }, 80); // delete speed slow
+
         return () => clearTimeout(timeout);
       } else {
         setForward(true);

@@ -9,15 +9,15 @@ import WhatsAppFounder from "./WhatsAppfounder";
 const team = [
   {
     name: "Maryam Ijaz",
-    role: "Graphic Designer • UI/UX",
+    role: "Senior Graphic Designer | UI/UX Designer | Brand Identity Specialist",
     img: "/girlspic.jpg",
-    desc: "Specialist in branding, social media design, logos & modern UI/UX with clean, user-focused visuals.",
+    desc: "Creative UI/UX and branding designer with strong expertise in modern digital experiences. I help businesses build powerful brand identities, high-converting UI designs, and engaging social media visuals that attract clients and grow their online presence. Focused on clean design, user psychology, and conversion-driven visuals for startups, SaaS products, and business brands.",
   },
   {
     name: "Jawad Ahmed",
-    role: "Senior Video Editor",
+    role: "Senior Video Editor | Motion Graphics & Visual Storytelling Specialist",
     img: "/jawadahemd.jpg",
-    desc: "With over 3 years of experience across a diverse range of projects, Jawad is a highly creative video editor. He specializes in visual storytelling, transforming raw footage into captivating masterpieces. His professionalism and dedication bring a fresh, engaging dynamic to every project our studio handles.",
+    desc: "Experienced video editor with 3+ years of expertise in crafting high-impact visual content for brands, startups, and digital campaigns. Specializes in cinematic editing, motion graphics, and storytelling-driven visuals that enhance engagement and brand identity. Focused on delivering polished, professional-grade edits that turn raw footage into compelling, audience-focused content designed to convert viewers into clients.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function OurTeam() {
             </h3>
 
             {/* ROLE */}
-            <p className="text-purple-600 text-md font-bold mt-2">
+            <p className="text-md mt-1 font-medium text-gray-50 tracking-wide">
               Co-Founder • Digital Marketing Specialist
             </p>
 
@@ -128,20 +128,19 @@ export default function OurTeam() {
             </div>
 
             {/* NAME */}
-            <h3 className="text-xl font-semibold text-white tracking-wide">
+            <h3 className="text-xl font-semibold text-white tracking-tight">
               {member.name}
             </h3>
 
             {/* ROLE */}
-            <p className="text-cyan-400 text-sm mt-1 font-medium">
+            <p className="text-md mt-1 font-medium text-gray-50 tracking-wide">
               {member.role}
             </p>
 
             {/* DESCRIPTION */}
-            <p className="text-gray-300 text-sm mt-3 leading-relaxed">
+            <p className="text-sm mt-3 leading-relaxed text-gray-300/90">
               {member.desc}
             </p>
-
             {/* BUTTON */}
           </motion.div>
         ))}

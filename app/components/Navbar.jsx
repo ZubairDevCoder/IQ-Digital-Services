@@ -32,16 +32,10 @@ export default function Navbar() {
           href="/"
           className="flex items-center hover:scale-105 transition duration-300"
         >
-          <h1 className="text-xl md:text-xl font-bold text-center">
-            <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              IQ
-            </span>{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Digital
-            </span>{" "}
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Services
-            </span>
+          <h1 className="text-xl  font-bold tracking-wide">
+            <span className="text-pink-500">IQ</span>{" "}
+            <span className="text-cyan-400">Digital</span>{" "}
+            <span className="text-yellow-400">Services</span>
           </h1>
         </Link>
 
@@ -84,12 +78,20 @@ export default function Navbar() {
 
             <SheetContent
               side="left"
-              className="bg-white/80 dark:bg-gray-900/90 backdrop-blur-xl border-r border-gray-200 dark:border-gray-800"
+              className="bg-gray-900 dark:bg-gray-900/90 backdrop-blur-xl border-r border-gray-200 dark:border-gray-800"
             >
               <SheetHeader>
                 <SheetTitle className="text-2xl font-bold flex gap-1">
-                  <span className="text-pink-500">IQ</span>
-                  <span className="text-blue-600">Digital</span>
+                  <Link
+                    href="/"
+                    className="flex items-center hover:scale-105 transition duration-300"
+                  >
+                    <h1 className="text-lg  font-bold tracking-wide">
+                      <span className="text-pink-500">IQ</span>{" "}
+                      <span className="text-cyan-400">Digital</span>{" "}
+                      <span className="text-yellow-400">Services</span>
+                    </h1>
+                  </Link>
                 </SheetTitle>
               </SheetHeader>
 
@@ -100,7 +102,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setActive(link.href)}
-                      className="text-lg font-semibold text-gray-800 dark:text-gray-200 
+                      className="text-lg font-semibold text-white dark:text-gray-200 
                       hover:text-pink-500 transition-all duration-300 
                       hover:translate-x-2 relative group"
                       style={{ transitionDelay: `${i * 80}ms` }}

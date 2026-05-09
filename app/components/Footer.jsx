@@ -26,20 +26,15 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* Column 1 - Brand */}
         <div>
+          {/* Logo */}
           <Link
             href="/"
             className="flex items-center hover:scale-105 transition duration-300"
           >
-            <h1 className="text-xl  font-bold text-center">
-              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                IQ
-              </span>{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Digital
-              </span>{" "}
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                Services
-              </span>
+            <h1 className="text-xl  font-bold tracking-wide">
+              <span className="text-pink-500">IQ</span>{" "}
+              <span className="text-cyan-400">Digital</span>{" "}
+              <span className="text-yellow-400">Services</span>
             </h1>
           </Link>
           <p className="text-gray-300 text-md leading-relaxed mt-3">
